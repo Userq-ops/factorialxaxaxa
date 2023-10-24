@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial</title>
+</head>
+<body>
+    <div>
+        <input type="number" id="number" placeholder="Введите число">
+                <button id="calculate">Вычислить</button>
+                <p id="result"></p> 
+    </div>
+    <script>
+        const numberInput = document.getElementById("number");
+    const calculateButton = document.getElementById("calculate");
+    const resultParagraph = document.getElementById("result");
+
+
+    function factorial(n) {
+      if (n === 0) {
+        return 1;
+      } else {
+        return n * factorial(n - 1);
+      }
+    }
+
+    calculateButton.addEventListener("click", () => {
+      const number = Number(numberInput.value);
+      const factorialResult = factorial(number);
+
+      resultParagraph.innerText = `Факториал числа ${number} равен ${factorialResult}`;
+    });
+    </script>
+</body>
+</html>
